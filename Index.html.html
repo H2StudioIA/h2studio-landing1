@@ -1,0 +1,1249 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>H² Studio | Comunicación Auténtica con IA para Coaches y Terapeutas</title>
+    <meta name="description" content="Sistemas de IA personalizados para coaches y terapeutas que preservan tu autenticidad. Automatiza tu comunicación sin perder tu esencia. Diagnóstico gratuito.">
+    <meta name="keywords" content="automatización para coaches, IA para terapeutas, voz de marca auténtica, comunicación auténtica, marketing consciente">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #4A4A8A; /* Azul profundo (títulos) */
+            --secondary: #9D7AD9; /* Lavanda (iconos) */
+            --accent: #FF6B9E; /* Rosa neón (CTAs) */
+            --light: #FFF9F0; /* Beige (fondos) */
+            --dark: #2E2E3A; /* Texto principal */
+            --text-light: #5D5D6B; /* Texto secundario */
+        }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: white;
+            overflow-x: hidden;
+            position: relative;
+        }
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        /* Header */
+        header {
+            background: white;
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--primary);
+            text-decoration: none;
+        }
+        .logo span {
+            color: var(--secondary);
+        }
+        /* Hero */
+        .hero {
+            text-align: center;
+            padding: 180px 0 100px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        .hero h1 {
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            color: rgba(255,255,255,0.9);
+        }
+        .hero-subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: rgba(255,255,255,0.9);
+            font-weight: 500;
+        }
+        .hero-target {
+            display: inline-block;
+            background-color: rgba(255,255,255,0.2);
+            padding: 8px 20px;
+            border-radius: 30px;
+            margin-bottom: 30px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+        /* Botones */
+        .cta-button {
+            display: inline-block;
+            background-color: var(--accent);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 107, 158, 0.4);
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(255, 107, 158, 0.6);
+        }
+        .secondary-button {
+            background-color: white;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+        /* Secciones */
+        section {
+            padding: 80px 0;
+        }
+        h2 {
+            text-align: center;
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 40px;
+        }
+        h3 {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+        /* Pain Section */
+        .pain-section {
+            background-color: var(--light);
+            text-align: center;
+        }
+        .pain-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .pain-section h2 {
+            margin-bottom: 20px;
+        }
+        .pain-section p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+        .pain-points {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        .pain-point {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+        .pain-point:hover {
+            transform: translateY(-5px);
+        }
+        .pain-icon {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            color: var(--accent);
+        }
+        /* Benefits Section */
+        .benefits-section {
+            text-align: center;
+        }
+        .benefits-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .benefit-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        .benefit-card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+            text-align: left;
+        }
+        .benefit-card:hover {
+            transform: translateY(-5px);
+        }
+        .benefit-icon {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            color: var(--secondary);
+        }
+        /* Cómo funciona */
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            margin-bottom: 30px;
+            border-radius: 10px;
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        .step {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+        .step:hover {
+            transform: translateY(-10px);
+        }
+        /* Quiz */
+        .quiz-section {
+            background-color: var(--light);
+        }
+        .quiz-container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            max-width: 600px;
+            margin: 0 auto;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        .quiz-question {
+            margin-bottom: 25px;
+        }
+        .quiz-question p {
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        .quiz-option {
+            display: block;
+            margin-bottom: 8px;
+            position: relative;
+            padding-left: 30px;
+            cursor: pointer;
+        }
+        .quiz-option input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+        }
+        .checkmark {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 20px;
+            width: 20px;
+            background-color: #eee;
+            border-radius: 50%;
+            border: 2px solid var(--primary);
+        }
+        .quiz-option:hover input ~ .checkmark {
+            background-color: #ddd;
+        }
+        .quiz-option input:checked ~ .checkmark {
+            background-color: var(--primary);
+        }
+        /* Servicios */
+        .services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        .service {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+            position: relative;
+            border: 1px solid rgba(0,0,0,0.1);
+        }
+        .service:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        .service-badge {
+            position: absolute;
+            top: 15px;
+            right: -30px;
+            background: var(--accent);
+            color: white;
+            padding: 5px 30px;
+            transform: rotate(45deg);
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+        .service-icon {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            display: inline-block;
+        }
+        .service h3 {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .service-price {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--primary);
+            margin: 20px 0;
+        }
+        .service ul {
+            margin: 20px 0;
+            padding-left: 20px;
+            list-style-type: none;
+        }
+        .service li {
+            margin-bottom: 12px;
+            position: relative;
+            padding-left: 25px;
+            color: var(--text-light);
+        }
+        .service li::before {
+            content: "✓";
+            color: var(--secondary);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+        .service-cta {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+        }
+        .service-benefits {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: rgba(157, 122, 217, 0.1);
+            border-radius: 8px;
+        }
+        .service-benefits h4 {
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+        /* Testimonios */
+        .testimonials {
+            background-color: var(--light);
+        }
+        .testimonial {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            max-width: 800px;
+            margin: 0 auto;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            text-align: center;
+        }
+        .testimonial-text {
+            font-style: italic;
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: #555;
+        }
+        .testimonial-author {
+            font-weight: bold;
+            color: var(--dark);
+        }
+        /* Comparativa */
+        #comparativa {
+            background-color: var(--light);
+        }
+        table {
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            border-collapse: collapse;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        th, td {
+            padding: 15px;
+            text-align: center;
+            border: 1px solid #eee;
+        }
+        th {
+            background-color: var(--dark);
+            color: white;
+            font-weight: bold;
+        }
+        td:first-child {
+            text-align: left;
+            font-weight: 500;
+        }
+        .comparativa-cta {
+            text-align: center;
+            font-size: 1.2rem;
+            margin: 30px auto;
+            max-width: 600px;
+        }
+        /* Métricas */
+        #metricas {
+            text-align: center;
+        }
+        .metricas-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            max-width: 900px;
+            margin: 0 auto 40px;
+        }
+        .metrica {
+            background: white;
+            padding: 30px 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        .numero {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--primary);
+            display: block;
+            margin-bottom: 10px;
+        }
+        blockquote {
+            font-style: italic;
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 20px;
+            position: relative;
+        }
+        blockquote::before, blockquote::after {
+            content: '"';
+            font-size: 3rem;
+            color: var(--secondary);
+            opacity: 0.3;
+            position: absolute;
+        }
+        blockquote::before {
+            top: -10px;
+            left: -10px;
+        }
+        blockquote::after {
+            bottom: -30px;
+            right: -10px;
+        }
+        cite {
+            display: block;
+            margin-top: 20px;
+            font-style: normal;
+            font-weight: bold;
+            color: var(--dark);
+        }
+        /* FAQ */
+        .faq-section {
+            background-color: var(--light);
+        }
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .faq-item {
+            background: white;
+            margin-bottom: 20px;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        .faq-item h3 {
+            color: var(--dark);
+            margin-bottom: 15px;
+        }
+        /* Oferta final */
+        #oferta-final {
+            text-align: center;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--dark) 100%);
+            color: white;
+        }
+        #oferta-final h2 {
+            color: white;
+        }
+        #oferta-final ul {
+            max-width: 600px;
+            margin: 0 auto 40px;
+            list-style: none;
+        }
+        #oferta-final li {
+            margin-bottom: 15px;
+            padding-left: 30px;
+            position: relative;
+            text-align: left;
+        }
+        #oferta-final li::before {
+            content: "✓";
+            color: var(--accent);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        .garantia {
+            font-style: italic;
+            margin: 30px auto;
+            max-width: 500px;
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+        /* Agenda */
+        .calendar-placeholder {
+            background: #f5f5f5;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            margin: 30px 0;
+        }
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 60px 0 20px;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        .footer-logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        .footer-logo span {
+            color: var(--secondary);
+        }
+        .footer-links h4 {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            color: white;
+        }
+        .footer-links ul {
+            list-style: none;
+        }
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        .footer-links a {
+            color: #ddd;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .footer-links a:hover {
+            color: white;
+        }
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+        }
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+        .copyright a {
+            color: #aaa;
+            text-decoration: none;
+        }
+        /* Popup Lead Magnet */
+        .lead-popup {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            width: 350px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            z-index: 1000;
+            padding: 25px;
+            transform: translateY(120%);
+            transition: transform 0.5s ease;
+        }
+        .lead-popup.active {
+            transform: translateY(0);
+        }
+        .close-popup {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: none;
+            border: none;
+            font-size: 1.2rem;
+            cursor: pointer;
+            color: var(--text-light);
+        }
+        .lead-popup h3 {
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+        .lead-popup p {
+            margin-bottom: 15px;
+            color: var(--text-light);
+        }
+        .lead-popup input, .lead-popup select {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: 'Montserrat', sans-serif;
+        }
+        .lead-popup button {
+            width: 100%;
+        }
+        /* Chat Button */
+        .chat-button {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background-color: var(--accent);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            box-shadow: 0 4px 20px rgba(255, 107, 158, 0.5);
+            cursor: pointer;
+            z-index: 999;
+            transition: all 0.3s ease;
+        }
+        .chat-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 25px rgba(255, 107, 158, 0.7);
+        }
+        /* Mobile */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            h2 {
+                font-size: 1.8rem;
+            }
+            .hero {
+                padding: 150px 0 80px;
+            }
+            .steps, .services, .metricas-container, .pain-points, .benefit-cards {
+                grid-template-columns: 1fr;
+            }
+            .video-container {
+                height: 250px;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            table {
+                font-size: 0.9rem;
+            }
+            .service-badge {
+                right: -25px;
+                padding: 5px 25px;
+                font-size: 0.7rem;
+            }
+            .lead-popup {
+                width: calc(100% - 40px);
+                left: 20px;
+                right: 20px;
+                bottom: 80px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <a href="#" class="logo">H²<span>Studio</span></a>
+            <nav>
+                <a href="#servicios" class="secondary-button" style="margin-right: 15px;">Servicios</a>
+                <a href="#oferta-final" class="cta-button">Diagnóstico Gratis</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Tu comunicación evoluciona.<br>Tu esencia permanece.</h1>
+            <p class="hero-subtitle">Ayudamos a coaches, psicólogas y marcas personales a construir sistemas de comunicación con IA que piensan, escriben y conectan como ellas mismas—sin perder su esencia.</p>
+            <div class="hero-target">Diseñado para expertas que transforman vidas</div>
+            <a href="#quiz" class="cta-button">🌟 Descubre Tu Etapa de Comunicación →</a>
+        </div>
+    </section>
+
+    <!-- Pain Section -->
+    <section class="pain-section">
+        <div class="container">
+            <div class="pain-container">
+                <h2>¿Estás lista para dejar de perder tiempo en los detalles y empezar a brillar con una comunicación estratégica, emocional y eficiente?</h2>
+                <p>En H² Studio, unimos la automatización inteligente con tu personalidad única para que conectes con tu audiencia de manera genuina y logres resultados tangibles.</p>
+                
+                <div class="pain-points">
+                    <div class="pain-point">
+                        <div class="pain-icon">⏳</div>
+                        <h3>Pérdida de tiempo</h3>
+                        <p>Horas creando contenido que no refleja tu esencia ni conecta con tu audiencia.</p>
+                    </div>
+                    
+                    <div class="pain-point">
+                        <div class="pain-icon">😫</div>
+                        <h3>Agotamiento</h3>
+                        <p>El peso de tener que estar presente en todos los canales sin descanso.</p>
+                    </div>
+                    
+                    <div class="pain-point">
+                        <div class="pain-icon">🤖</div>
+                        <h3>Automatización fría</h3>
+                        <p>Herramientas genéricas que no captan tu tono y estilo único.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits-section">
+        <div class="container">
+            <div class="benefits-container">
+                <h2>Lo que ganarás con nuestros sistemas</h2>
+                
+                <div class="benefit-cards">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">💎</div>
+                        <h3>Delegar con esencia, comunicar con impacto</h3>
+                        <p>Creamos contenido inteligente con IA que habla como tú, piensa como tú y conecta con tu audiencia sin que tengas que escribir cada palabra. Tu historia, tu estilo y tu voz se mantienen intactos mientras tú enfocas tu energía en lo que más importa.</p>
+                    </div>
+                    
+                    <div class="benefit-card">
+                        <div class="benefit-icon">⚡</div>
+                        <h3>Automatizar procesos, amplificar tu presencia</h3>
+                        <p>Diseñamos flujos estratégicos que integran email, atención al cliente y contenido, permitiéndote escalar tu marca con sistemas que trabajan por ti. Todo se vuelve más fluido, ordenado y humano… sin esfuerzo diario.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cómo Funciona -->
+    <section id="como-funciona">
+        <div class="container">
+            <h2>Tu Voz + Nuestra Tecnología = Comunicación Auténtica 24/7</h2>
+            
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            
+            <div class="steps">
+                <div class="step">
+                    <h3>1. Descubrimiento</h3>
+                    <p>Analizamos tus textos y audios para captar tu <strong>tono único</strong> (empático, profesional, motivacional).</p>
+                </div>
+                
+                <div class="step">
+                    <h3>2. Entrenamiento</h3>
+                    <p>Creamos tu <strong>"clon comunicativo"</strong> con IA, aprendiendo tus frases clave y estilo.</p>
+                </div>
+                
+                <div class="step">
+                    <h3>3. Automatización</h3>
+                    <p>Implementamos flujos para redes, emails y atención al cliente <strong>en tu voz</strong>.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Beneficios Tangibles -->
+    <section class="benefits-section" style="background-color: var(--light);">
+        <div class="container">
+            <h2>Beneficios Tangibles de Nuestros Sistemas</h2>
+            
+            <div class="benefit-cards">
+                <div class="benefit-card">
+                    <div class="benefit-icon">⏱️</div>
+                    <h3>Recupera tu tiempo</h3>
+                    <p>Automatiza tareas repetitivas y enfócate en lo que solo tú puedes hacer. Recupera entre 10-15 horas semanales.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">❤️</div>
+                    <h3>Conexión genuina</h3>
+                    <p>Contenido emocionalmente estratégico, diseñado para resonar y diferenciarte de la competencia.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">✨</div>
+                    <h3>Coherencia de marca</h3>
+                    <p>Cada elemento de tu comunicación refleja tu profesionalismo, esencia y calidez humana.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quiz -->
+    <section id="quiz" class="quiz-section">
+        <div class="container">
+            <h2>¿En Qué Etapa Está Tu Comunicación?</h2>
+            <p style="text-align: center; max-width: 700px; margin: 0 auto 30px;">Responde 3 preguntas y descubre cómo potenciar tu voz con tecnología consciente:</p>
+            
+            <div class="quiz-container">
+                <div class="quiz-question">
+                    <p><strong>1. ¿Cómo defines tu tono de comunicación actual?</strong></p>
+                    <label class="quiz-option">
+                        <input type="radio" name="tono">
+                        <span class="checkmark"></span>
+                        No lo tengo claro
+                    </label>
+                    <label class="quiz-option">
+                        <input type="radio" name="tono">
+                        <span class="checkmark"></span>
+                        Empático pero inconsistente
+                    </label>
+                    <label class="quiz-option">
+                        <input type="radio" name="tono">
+                        <span class="checkmark"></span>
+                        Profesional pero frío
+                    </label>
+                </div>
+                
+                <div class="quiz-question">
+                    <p><strong>2. ¿Cuántas horas pierdes semanalmente creando contenido?</strong></p>
+                    <label class="quiz-option">
+                        <input type="radio" name="horas">
+                        <span class="checkmark"></span>
+                        Más de 10
+                    </label>
+                    <label class="quiz-option">
+                        <input type="radio" name="horas">
+                        <span class="checkmark"></span>
+                        5-10
+                    </label>
+                    <label class="quiz-option">
+                        <input type="radio" name="horas">
+                        <span class="checkmark"></span>
+                        Menos de 5
+                    </label>
+                </div>
+                
+                <div class="quiz-question">
+                    <p><strong>3. ¿Tu audiencia reconoce tus mensajes al instante?</strong></p>
+                    <label class="quiz-option">
+                        <input type="radio" name="reconoce">
+                        <span class="checkmark"></span>
+                        No estoy segura
+                    </label>
+                    <label class="quiz-option">
+                        <input type="radio" name="reconoce">
+                        <span class="checkmark"></span>
+                        A veces
+                    </label>
+                    <label class="quiz-option">
+                        <input type="radio" name="reconoce">
+                        <span class="checkmark"></span>
+                        ¡Sí!
+                    </label>
+                </div>
+                
+                <a href="#resultados" class="cta-button" style="display: block; text-align: center; margin-top: 20px;">🔮 Obtén Tu Plan Personalizado →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Servicios Actualizados -->
+    <section id="servicios">
+        <div class="container">
+            <h2>Viaje de Transformación para tu Comunicación</h2>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto 40px; color: var(--text-light);">Selecciona la etapa que mejor se adapte a tus necesidades actuales</p>
+            
+            <div class="services">
+                <div class="service">
+                    <div class="service-badge">Más Popular</div>
+                    <h3><span class="service-icon">🌱</span> ALMA (Raíces)</h3>
+                    <p><strong>Kit de Raíces de Marca</strong></p>
+                    <p style="color: var(--text-light); margin: 10px 0 15px;">Claridad sobre tu mensaje esencial</p>
+                    <ul>
+                        <li>Definición de propósito y valores</li>
+                        <li>Arquitectura de mensajes clave</li>
+                        <li>Guía de tono de voz personalizado</li>
+                        <li>Manual de comunicación estratégica</li>
+                        <li>Checklist de autenticidad</li>
+                    </ul>
+                    
+                    <div class="service-benefits">
+                        <h4>Beneficios clave:</h4>
+                        <p>• Claridad en tu mensaje central<br>
+                        • Coherencia en todas tus comunicaciones<br>
+                        • Base sólida para automatización futura</p>
+                    </div>
+                    
+                    <div class="service-price">$497 USD</div>
+                    <a href="#quiz" class="cta-button service-cta">Comienza tu diagnóstico gratuito →</a>
+                </div>
+                
+                <div class="service">
+                    <h3><span class="service-icon">💡</span> VOCALIA (Voz)</h3>
+                    <p><strong>Impulso Estratégico</strong></p>
+                    <p style="color: var(--text-light); margin: 10px 0 15px;">Coherencia en todos tus canales</p>
+                    <ul>
+                        <li>3 sesiones de mentoría 1:1</li>
+                        <li>Auditoría de comunicación</li>
+                        <li>Planificador de contenido anual</li>
+                        <li>Guía de estilo avanzada</li>
+                        <li>Plantillas personalizadas</li>
+                    </ul>
+                    
+                    <div class="service-benefits">
+                        <h4>Beneficios clave:</h4>
+                        <p>• Estrategia de contenido clara<br>
+                        • Ahorro de tiempo en creación<br>
+                        • Mensajes más impactantes</p>
+                    </div>
+                    
+                    <div class="service-price">$1,200-$2,500 USD</div>
+                    <a href="#oferta-final" class="cta-button service-cta">Agenda una consulta 1:1 →</a>
+                </div>
+                
+                <div class="service">
+                    <h3><span class="service-icon">⚙️</span> SOMA (Sistema)</h3>
+                    <p><strong>Clon de Comunicación</strong></p>
+                    <p style="color: var(--text-light); margin: 10px 0 15px;">Automatiza sin perder autenticidad</p>
+                    <ul>
+                        <li>Entrenamiento de IA con tu voz</li>
+                        <li>Flujos para redes y emails</li>
+                        <li>Generación de contenido semanal</li>
+                        <li>Integración con tus herramientas</li>
+                        <li>Soporte técnico por 3 meses</li>
+                    </ul>
+                    
+                    <div class="service-benefits">
+                        <h4>Beneficios clave:</h4>
+                        <p>• Recupera 10+ horas semanales<br>
+                        • Contenido consistente en tu voz<br>
+                        • Escalabilidad sin perder autenticidad</p>
+                    </div>
+                    
+                    <div class="service-price">$1,200 USD</div>
+                    <a href="#demo" class="cta-button service-cta">Prueba una demo de IA →</a>
+                </div>
+                
+                <div class="service">
+                    <h3><span class="service-icon">🚀</span> MAGNA (Escala)</h3>
+                    <p><strong>Membresía Alma-Tech</strong></p>
+                    <p style="color: var(--text-light); margin: 10px 0 15px;">Crece con métricas conscientes</p>
+                    <ul>
+                        <li>Acceso a comunidad exclusiva</li>
+                        <li>Sesiones grupales mensuales</li>
+                        <li>Actualizaciones de IA continuas</li>
+                        <li>Reportes de métricas humanizadas</li>
+                        <li>Descuentos en otros servicios</li>
+                    </ul>
+                    
+                    <div class="service-benefits">
+                        <h4>Beneficios clave:</h4>
+                        <p>• Soporte continuo<br>
+                        • Actualizaciones constantes<br>
+                        • Comunidad de apoyo</p>
+                    </div>
+                    
+                    <div class="service-price">$49/mes USD</div>
+                    <a href="#comunidad" class="cta-button service-cta">Únete a la comunidad →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparativa -->
+    <section id="comparativa" class="comparativa-section">
+        <div class="container">
+            <h2>¿Por Qué Elegir un Sistema con Alma?</h2>
+            
+            <table>
+                <tr>
+                    <th></th>
+                    <th>H² Studio</th>
+                    <th>Otras Soluciones</th>
+                </tr>
+                <tr>
+                    <td>Entrenamiento de IA</td>
+                    <td>✅ Con tu voz y valores</td>
+                    <td>❌ Plantillas genéricas</td>
+                </tr>
+                <tr>
+                    <td>Enfoque</td>
+                    <td>✅ Desarrollo humano</td>
+                    <td>❌ Marketing masivo</td>
+                </tr>
+                <tr>
+                    <td>Resultados</td>
+                    <td>✅ Conexión auténtica</td>
+                    <td>❌ Interacciones vacías</td>
+                </tr>
+                <tr>
+                    <td>Personalización</td>
+                    <td>✅ Hecho a tu medida</td>
+                    <td>❌ Soluciones estándar</td>
+                </tr>
+                <tr>
+                    <td>Soporte</td>
+                    <td>✅ Continuo y personal</td>
+                    <td>❌ Genérico o inexistente</td>
+                </tr>
+            </table>
+            
+            <p class="comparativa-cta"><em>"En un mundo de robots, <strong>tu autenticidad es tu superpoder</strong>"</em></p>
+            <a href="#oferta-final" class="cta-button" style="display: inline-block; margin: 0 auto;">Quiero mi comunicación auténtica →</a>
+        </div>
+    </section>
+
+    <!-- Métricas -->
+    <section id="metricas">
+        <div class="container">
+            <h2>La Tecnología Sí Puede Ser Humana: Nuestros Resultados</h2>
+            
+            <div class="metricas-container">
+                <div class="metrica">
+                    <span class="numero">92%</span>
+                    <p>de clientas recuperaron <strong>+10 horas/semana</strong> delegando contenido</p>
+                </div>
+                
+                <div class="metrica">
+                    <span class="numero">70%</span>
+                    <p>aumento promedio en <strong>engagement emocional</strong></p>
+                </div>
+                
+                <div class="metrica">
+                    <span class="numero">100%</span>
+                    <p>modelos de IA entrenados con <strong>ética femenina</strong></p>
+                </div>
+            </div>
+            
+            <blockquote>
+                "Mi asistente de IA hizo llorar a una clienta... con un email automático que sonaba exactamente como yo"
+                <cite>- Carla, Mentora de Liderazgo Femenino</cite>
+            </blockquote>
+        </div>
+    </section>
+
+    <!-- Testimonios -->
+    <section class="testimonials">
+        <div class="container">
+            <h2>Ellas Ya Automatizaron Su Voz</h2>
+            
+            <div class="testimonial">
+                <p class="testimonial-text">"Antes perdía horas escribiendo posts que no resonaban. Ahora mi IA genera contenido que mis seguidores AMAN, y yo solo reviso y ajusto. ¡Mi engagement aumentó un 150%!"</p>
+                <p class="testimonial-author">- Mariana, Coach de Vida</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq-section">
+        <div class="container">
+            <h2>Preguntas Frecuentes Sobre Automatización con Alma</h2>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <h3>¿La IA reemplazará mi autenticidad?</h3>
+                    <p>No. Entrenamos modelos con TUS textos y audios para que repliquen tu estilo único. La tecnología amplifica tu voz, no la reemplaza.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>¿Cómo sé si necesito ALMA o SOMA?</h3>
+                    <p>Haz nuestro quiz gratuito. Si no tienes clara tu voz, empieza con ALMA. Si ya la tienes pero quieres ahorrar tiempo, ve a SOMA.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>¿Funciona para terapeutas/coaches?</h3>
+                    <p>Sí. Trabajamos solo con profesionales del desarrollo humano. Nuestros sistemas respetan la ética y sensibilidad de tu nicho.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>¿Qué pasa si no me gustan los resultados?</h3>
+                    <p>Ofrecemos garantía de satisfacción: si en los primeros 15 días no ves valor, te devolvemos tu inversión.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Oferta Final -->
+    <section id="oferta-final">
+        <div class="container">
+            <h2>Comienza Hoy con Un Diagnóstico Gratuito</h2>
+            
+            <ul>
+                <li>30 minutos 1:1 con nuestra especialista</li>
+                <li>Análisis de tu comunicación actual</li>
+                <li>Plan personalizado para tu etapa</li>
+                <li>Estrategias inmediatas aplicables</li>
+            </ul>
+            
+            <div class="calendar-placeholder">
+                <p>Aquí iría el widget de Calendly para agendar</p>
+            </div>
+            
+            <p class="garantia">Sin compromiso. Sin fórmulas genéricas. Solo estrategias hechas para ti.</p>
+            
+            <a href="#" class="cta-button" style="display: inline-block; margin: 0 auto;">📅 Agendar Diagnóstico Gratis →</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-logo">H²<span>Studio</span></div>
+                    <p style="color: #ddd;">Tu comunicación evoluciona.<br>Tu esencia permanece.</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Servicios</h4>
+                    <ul>
+                        <li><a href="#servicios">ALMA: Raíces</a></li>
+                        <li><a href="#servicios">VOCALIA: Voz</a></li>
+                        <li><a href="#servicios">SOMA: Sistema</a></li>
+                        <li><a href="#servicios">MAGNA: Escala</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Contacto</h4>
+                    <ul>
+                        <li>hola@h2studio.io</li>
+                        <li>WhatsApp: +XX XXX XXX XXX</li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Síguenos</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                © 2024 H² Studio. Todos los derechos reservados. | <a href="#">Política de Privacidad</a> | <a href="#">Términos de Servicio</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Lead Magnet Popup -->
+    <div class="lead-popup" id="leadPopup">
+        <button class="close-popup" id="closePopup">×</button>
+        <h3>🎁 Recibe Nuestra Guía Gratuita</h3>
+        <p><strong>"5 Señales de Que Tu Comunicación Necesita IA"</strong></p>
+        <p>Aprende a identificar cuándo es momento de escalar tu voz con tecnología consciente.</p>
+        
+        <form id="leadForm">
+            <input type="text" placeholder="Tu nombre" required>
+            <input type="email" placeholder="Email" required>
+            <select required>
+                <option value="">¿Qué haces?</option>
+                <option>Coach</option>
+                <option>Terapeuta</option>
+                <option>Psicóloga</option>
+                <option>Otra profesión de ayuda</option>
+            </select>
+            <button type="submit" class="cta-button">Descargar Ahora →</button>
+        </form>
+    </div>
+
+    <!-- Chat Button -->
+    <div class="chat-button" id="chatButton">
+        <i class="fas fa-comment-dots"></i>
+    </div>
+
+    <script>
+        // Lead Popup functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            // Show popup after 5 seconds
+            setTimeout(function() {
+                document.getElementById('leadPopup').classList.add('active');
+            }, 5000);
+            
+            // Close popup
+            document.getElementById('closePopup').addEventListener('click', function() {
+                document.getElementById('leadPopup').classList.remove('active');
+            });
+            
+            // Form submission
+            document.getElementById('leadForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('¡Gracias! Tu guía está en camino. Revisa tu email en los próximos minutos.');
+                document.getElementById('leadPopup').classList.remove('active');
+            });
+            
+            // Chat button functionality
+            document.getElementById('chatButton').addEventListener('click', function() {
+                alert('¡Hola! ¿En qué podemos ayudarte hoy? Puedes escribirnos a hola@h2studio.io o por WhatsApp al +XX XXX XXX XXX');
+            });
+            
+            // Close popup when clicking outside
+            document.addEventListener('click', function(event) {
+                const popup = document.getElementById('leadPopup');
+                if (!popup.contains(event.target) && event.target.id !== 'chatButton') {
+                    popup.classList.remove('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
