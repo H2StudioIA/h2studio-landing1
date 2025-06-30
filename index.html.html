@@ -4,7 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>H² Studio | Automatiza Tu Comunicación con IA y Sin Perder Autenticidad</title>
-    <meta name="description" content="Descubre cómo coaches y terapeutas escalan su marca personal con IA que habla como ellas. Diagnóstico gratuito para comunicar con alma y tecnología.">
+    <meta name="description" content="Coaches y terapeutas: tu marca personal automatizada con IA que habla como tú. Diagnóstico gratuito para comunicar con alma y tecnología.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary: #9D7AD9; /* Lavanda */
@@ -13,37 +16,66 @@
             --light: #FFF9F0; /* Beige */
             --accent: #FFD166; /* Oro rosa */
         }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
         body {
             font-family: 'Montserrat', sans-serif;
             line-height: 1.6;
             color: #333;
-            margin: 0;
-            padding: 0;
+            background-color: white;
+            overflow-x: hidden;
         }
         .container {
+            width: 100%;
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
         }
-        /* Estilos del header y hero */
+        /* Header */
         header {
             background: linear-gradient(135deg, var(--light) 0%, white 100%);
             padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
         }
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--dark);
+            text-decoration: none;
+        }
+        .logo span {
+            color: var(--primary);
+        }
+        /* Hero */
         .hero {
             text-align: center;
-            padding: 60px 0;
+            padding: 180px 0 100px;
+            background-color: var(--light);
         }
         h1 {
-            font-size: 2.8rem;
+            font-size: 2.5rem;
             color: var(--dark);
             margin-bottom: 20px;
+            line-height: 1.2;
         }
         .hero p {
             font-size: 1.2rem;
             max-width: 700px;
             margin: 0 auto 30px;
+            color: #555;
         }
+        /* Botones */
         .cta-button {
             display: inline-block;
             background-color: var(--primary);
@@ -54,22 +86,279 @@
             font-weight: bold;
             transition: all 0.3s ease;
             box-shadow: 0 4px 15px rgba(157, 122, 217, 0.3);
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
         }
         .cta-button:hover {
             transform: translateY(-3px);
             box-shadow: 0 6px 20px rgba(157, 122, 217, 0.4);
         }
-        /* Estilos de las secciones */
+        .secondary-button {
+            background-color: white;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+        /* Secciones */
         section {
-            padding: 60px 0;
+            padding: 80px 0;
         }
         h2 {
             text-align: center;
-            font-size: 2.2rem;
+            font-size: 2rem;
             color: var(--dark);
             margin-bottom: 40px;
         }
-        /* Estilos responsivos */
+        h3 {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+        /* Cómo funciona */
+        .video-placeholder {
+            background: #f5f5f5;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+        .video-placeholder::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, var(--light), white);
+            opacity: 0.7;
+        }
+        .video-placeholder p {
+            position: relative;
+            z-index: 2;
+            font-style: italic;
+            font-size: 1.2rem;
+            color: var(--dark);
+        }
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        .step {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+        .step:hover {
+            transform: translateY(-10px);
+        }
+        /* Quiz */
+        .quiz-section {
+            background-color: var(--light);
+        }
+        .quiz-container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            max-width: 600px;
+            margin: 0 auto;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        .quiz-question {
+            margin-bottom: 25px;
+        }
+        .quiz-question p {
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        .quiz-option {
+            display: block;
+            margin-bottom: 8px;
+            position: relative;
+            padding-left: 30px;
+            cursor: pointer;
+        }
+        .quiz-option input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+        }
+        .checkmark {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 20px;
+            width: 20px;
+            background-color: #eee;
+            border-radius: 50%;
+            border: 2px solid var(--primary);
+        }
+        .quiz-option:hover input ~ .checkmark {
+            background-color: #ddd;
+        }
+        .quiz-option input:checked ~ .checkmark {
+            background-color: var(--primary);
+        }
+        /* Servicios */
+        .services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        .service {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+        .service:hover {
+            transform: translateY(-5px);
+        }
+        .service-icon {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+        .service ul {
+            margin: 20px 0;
+            padding-left: 20px;
+        }
+        .service li {
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 20px;
+        }
+        .service li::before {
+            content: "•";
+            color: var(--primary);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+        /* Testimonios */
+        .testimonials {
+            background-color: var(--light);
+        }
+        .testimonial {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            max-width: 800px;
+            margin: 0 auto;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            text-align: center;
+        }
+        .testimonial-text {
+            font-style: italic;
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: #555;
+        }
+        .testimonial-author {
+            font-weight: bold;
+            color: var(--dark);
+        }
+        /* Agenda */
+        .calendar-placeholder {
+            background: #f5f5f5;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            margin: 30px 0;
+        }
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 60px 0 20px;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        .footer-logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        .footer-logo span {
+            color: var(--primary);
+        }
+        .footer-links h4 {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            color: white;
+        }
+        .footer-links ul {
+            list-style: none;
+        }
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        .footer-links a {
+            color: #ddd;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .footer-links a:hover {
+            color: white;
+        }
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+        }
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+        /* Sidebar */
+        .sidebar {
+            position: fixed;
+            right: -300px;
+            top: 0;
+            width: 300px;
+            height: 100%;
+            background: white;
+            box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+            transition: right 0.3s ease;
+            z-index: 1000;
+            padding: 30px;
+            overflow-y: auto;
+        }
+        .sidebar.active {
+            right: 0;
+        }
+        .close-sidebar {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--dark);
+        }
+        /* Mobile */
         @media (max-width: 768px) {
             h1 {
                 font-size: 2rem;
@@ -77,17 +366,35 @@
             h2 {
                 font-size: 1.8rem;
             }
+            .hero {
+                padding: 150px 0 80px;
+            }
+            .steps, .services {
+                grid-template-columns: 1fr;
+            }
+            .video-placeholder {
+                height: 300px;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
         }
     </style>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Header -->
     <header>
         <div class="container">
-            <!-- Logo aquí -->
+            <a href="#" class="logo">H²<span>Studio</span></a>
+            <nav>
+                <a href="#servicios" class="secondary-button" style="margin-right: 15px;">Servicios</a>
+                <a href="#agenda" class="cta-button">Agendar Diagnóstico</a>
+            </nav>
         </div>
     </header>
 
+    <!-- Hero Section -->
     <section class="hero">
         <div class="container">
             <h1>Tu Marca Personal Automatizada, Sin Dejar de Ser Tú</h1>
@@ -96,160 +403,186 @@
         </div>
     </section>
 
+    <!-- Cómo Funciona -->
     <section id="como-funciona">
         <div class="container">
             <h2>Tu Voz + Nuestra Tecnología = Comunicación Auténtica 24/7</h2>
             
-            <div style="max-width: 800px; margin: 0 auto 40px; text-align: center;">
-                <!-- Espacio para video embed -->
-                <div style="background: #f5f5f5; height: 400px; display: flex; align-items: center; justify-content: center; border-radius: 10px; margin-bottom: 20px;">
-                    <p style="font-style: italic;">"Así transformamos tu esencia en un sistema que trabaja para ti:"</p>
-                </div>
+            <div class="video-placeholder">
+                <p>"Así transformamos tu esencia en un sistema que trabaja para ti"</p>
             </div>
             
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px;">
-                <div style="background: white; padding: 25px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
-                    <h3 style="color: var(--primary);">1. Descubrimiento</h3>
+            <div class="steps">
+                <div class="step">
+                    <h3>1. Descubrimiento</h3>
                     <p>Analizamos tus textos y audios para captar tu <strong>tono único</strong> (empático, profesional, motivacional).</p>
                 </div>
                 
-                <div style="background: white; padding: 25px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
-                    <h3 style="color: var(--primary);">2. Entrenamiento</h3>
+                <div class="step">
+                    <h3>2. Entrenamiento</h3>
                     <p>Creamos tu <strong>"clon comunicativo"</strong> con IA, aprendiendo tus frases clave y estilo.</p>
                 </div>
                 
-                <div style="background: white; padding: 25px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
-                    <h3 style="color: var(--primary);">3. Automatización</h3>
+                <div class="step">
+                    <h3>3. Automatización</h3>
                     <p>Implementamos flujos para redes, emails y atención al cliente <strong>en tu voz</strong>.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="quiz" style="background: var(--light);">
+    <!-- Quiz -->
+    <section id="quiz" class="quiz-section">
         <div class="container">
             <h2>¿En Qué Etapa Está Tu Comunicación?</h2>
             <p style="text-align: center; max-width: 700px; margin: 0 auto 30px;">Responde 3 preguntas y descubre cómo potenciar tu voz con tecnología consciente:</p>
             
-            <div style="background: white; padding: 30px; border-radius: 10px; max-width: 600px; margin: 0 auto;">
-                <div style="margin-bottom: 20px;">
+            <div class="quiz-container">
+                <div class="quiz-question">
                     <p><strong>1. ¿Cómo defines tu tono de comunicación actual?</strong></p>
-                    <div style="margin-top: 10px;">
-                        <input type="radio" id="tono1" name="tono">
-                        <label for="tono1">No lo tengo claro</label><br>
-                        <input type="radio" id="tono2" name="tono">
-                        <label for="tono2">Empático pero inconsistente</label><br>
-                        <input type="radio" id="tono3" name="tono">
-                        <label for="tono3">Profesional pero frío</label>
-                    </div>
+                    <label class="quiz-option">
+                        <input type="radio" name="tono">
+                        <span class="checkmark"></span>
+                        No lo tengo claro
+                    </label>
+                    <label class="quiz-option">
+                        <input type="radio" name="tono">
+                        <span class="checkmark"></span>
+                        Empático pero inconsistente
+                    </label>
+                    <label class="quiz-option">
+                        <input type="radio" name="tono">
+                        <span class="checkmark"></span>
+                        Profesional pero frío
+                    </label>
                 </div>
                 
-                <div style="margin-bottom: 20px;">
+                <div class="quiz-question">
                     <p><strong>2. ¿Cuántas horas pierdes semanalmente creando contenido?</strong></p>
-                    <div style="margin-top: 10px;">
-                        <input type="radio" id="horas1" name="horas">
-                        <label for="horas1">Más de 10</label><br>
-                        <input type="radio" id="horas2" name="horas">
-                        <label for="horas2">5-10</label><br>
-                        <input type="radio" id="horas3" name="horas">
-                        <label for="horas3">Menos de 5</label>
-                    </div>
+                    <label class="quiz-option">
+                        <input type="radio" name="horas">
+                        <span class="checkmark"></span>
+                        Más de 10
+                    </label>
+                    <label class="quiz-option">
+                        <input type="radio" name="horas">
+                        <span class="checkmark"></span>
+                        5-10
+                    </label>
+                    <label class="quiz-option">
+                        <input type="radio" name="horas">
+                        <span class="checkmark"></span>
+                        Menos de 5
+                    </label>
                 </div>
                 
-                <div style="margin-bottom: 30px;">
+                <div class="quiz-question">
                     <p><strong>3. ¿Tu audiencia reconoce tus mensajes al instante?</strong></p>
-                    <div style="margin-top: 10px;">
-                        <input type="radio" id="reconoce1" name="reconoce">
-                        <label for="reconoce1">No estoy segura</label><br>
-                        <input type="radio" id="reconoce2" name="reconoce">
-                        <label for="reconoce2">A veces</label><br>
-                        <input type="radio" id="reconoce3" name="reconoce">
-                        <label for="reconoce3">¡Sí!</label>
-                    </div>
+                    <label class="quiz-option">
+                        <input type="radio" name="reconoce">
+                        <span class="checkmark"></span>
+                        No estoy segura
+                    </label>
+                    <label class="quiz-option">
+                        <input type="radio" name="reconoce">
+                        <span class="checkmark"></span>
+                        A veces
+                    </label>
+                    <label class="quiz-option">
+                        <input type="radio" name="reconoce">
+                        <span class="checkmark"></span>
+                        ¡Sí!
+                    </label>
                 </div>
                 
-                <a href="#resultados" class="cta-button" style="display: block; text-align: center;">🔮 Obtén Tu Plan Personalizado →</a>
+                <a href="#resultados" class="cta-button" style="display: block; text-align: center; margin-top: 20px;">🔮 Obtén Tu Plan Personalizado →</a>
             </div>
         </div>
     </section>
 
-    <section id="metricas">
+    <!-- Servicios -->
+    <section id="servicios">
         <div class="container">
-            <h2>La Tecnología Sí Puede Ser Humana: Nuestros Resultados</h2>
+            <h2>Nuestros Servicios con Alma Tecnológica</h2>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto 40px; color: #555;">Diseñados para mujeres líderes que transforman vidas a través de comunicación auténtica y tecnología consciente.</p>
             
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; margin-bottom: 50px;">
-                <div style="text-align: center;">
-                    <span style="font-size: 3rem; font-weight: bold; color: var(--primary); display: block; margin-bottom: 10px;">92%</span>
-                    <p style="margin: 0;">de clientas recuperaron <strong>+10 horas/semana</strong> delegando contenido</p>
+            <div class="services">
+                <div class="service">
+                    <div class="service-icon">🌱</div>
+                    <h3>Impulso Estratégico</h3>
+                    <p><strong>Para expertas en construcción o reinvención de marca.</strong></p>
+                    <ul>
+                        <li>Definición de propósito y valores</li>
+                        <li>Arquitectura de mensajes clave</li>
+                        <li>Guía de tono de voz personalizado</li>
+                        <li>Diseño de identidad visual (opcional)</li>
+                    </ul>
+                    <a href="#agenda" class="cta-button" style="display: inline-block; margin-top: 15px;">Desde $1,200 →</a>
                 </div>
                 
-                <div style="text-align: center;">
-                    <span style="font-size: 3rem; font-weight: bold; color: var(--primary); display: block; margin-bottom: 10px;">70%</span>
-                    <p style="margin: 0;">aumento promedio en <strong>engagement emocional</strong></p>
+                <div class="service">
+                    <div class="service-icon">⚙️</div>
+                    <h3>Automatización Consciente</h3>
+                    <p><strong>Para marcas con presencia que quieren escalar.</strong></p>
+                    <ul>
+                        <li>Asistente de IA con tu voz</li>
+                        <li>Flujos para redes y emails</li>
+                        <li>Generación de contenido automático</li>
+                        <li>Integración con tus herramientas</li>
+                    </ul>
+                    <a href="#agenda" class="cta-button" style="display: inline-block; margin-top: 15px;">Desde $800 →</a>
                 </div>
                 
-                <div style="text-align: center;">
-                    <span style="font-size: 3rem; font-weight: bold; color: var(--primary); display: block; margin-bottom: 10px;">100%</span>
-                    <p style="margin: 0;">modelos de IA entrenados con <strong>ética femenina</strong></p>
+                <div class="service">
+                    <div class="service-icon">🚀</div>
+                    <h3>Mentorías 1:1</h3>
+                    <p><strong>Solución personalizada para bloqueos.</strong></p>
+                    <ul>
+                        <li>Sesiones de estrategia y voz</li>
+                        <li>Roadmap en 90 días</li>
+                        <li>Coaching en comunicación digital</li>
+                        <li>Follow-up con plan de acción</li>
+                    </ul>
+                    <a href="#agenda" class="cta-button" style="display: inline-block; margin-top: 15px;">$450/sesión →</a>
                 </div>
             </div>
-            
-            <blockquote style="max-width: 700px; margin: 0 auto; font-style: italic; font-size: 1.2rem; text-align: center; border-left: 4px solid var(--primary); padding-left: 20px;">
-                "Mi asistente de IA hizo llorar a una clienta... con un email automático que sonaba exactamente como yo"
-                <cite style="display: block; margin-top: 15px; font-style: normal; font-weight: bold;">- Carla, Mentora de Liderazgo Femenino</cite>
-            </blockquote>
         </div>
     </section>
 
-    <section id="comparativa" style="background: #f9f9f9;">
+    <!-- Testimonios -->
+    <section class="testimonials">
         <div class="container">
-            <h2>¿Por Qué Elegir un Sistema con Alma?</h2>
+            <h2>Ellas Ya Automatizaron Su Voz</h2>
             
-            <div style="overflow-x: auto; margin-bottom: 40px;">
-                <table style="width: 100%; border-collapse: collapse; margin: 0 auto; max-width: 800px;">
-                    <tr style="background-color: var(--primary); color: white;">
-                        <th style="padding: 15px; text-align: left;"></th>
-                        <th style="padding: 15px; text-align: center;">H² Studio</th>
-                        <th style="padding: 15px; text-align: center;">Otras Soluciones</th>
-                    </tr>
-                    <tr style="border-bottom: 1px solid #ddd;">
-                        <td style="padding: 15px; font-weight: bold;">Entrenamiento de IA</td>
-                        <td style="padding: 15px; text-align: center; color: var(--primary);">✅ Con tu voz y valores</td>
-                        <td style="padding: 15px; text-align: center; color: #ff6b6b;">❌ Plantillas genéricas</td>
-                    </tr>
-                    <tr style="border-bottom: 1px solid #ddd;">
-                        <td style="padding: 15px; font-weight: bold;">Enfoque</td>
-                        <td style="padding: 15px; text-align: center; color: var(--primary);">✅ Desarrollo humano</td>
-                        <td style="padding: 15px; text-align: center; color: #ff6b6b;">❌ Marketing masivo</td>
-                    </tr>
-                    <tr style="border-bottom: 1px solid #ddd;">
-                        <td style="padding: 15px; font-weight: bold;">Resultados</td>
-                        <td style="padding: 15px; text-align: center; color: var(--primary);">✅ Conexión auténtica</td>
-                        <td style="padding: 15px; text-align: center; color: #ff6b6b;">❌ Interacciones vacías</td>
-                    </tr>
-                </table>
-            </div>
-            
-            <p style="text-align: center; font-style: italic; font-size: 1.2rem; margin-bottom: 30px;">"En un mundo de robots, <strong>tu autenticidad es tu superpoder</strong>"</p>
-            <div style="text-align: center;">
-                <a href="#agenda" class="cta-button">Quiero mi comunicación auténtica →</a>
+            <div class="testimonial">
+                <p class="testimonial-text">"Mi asistente de IA hizo llorar a una clienta... con un email automático que sonaba exactamente como yo. Ahora tengo 10 horas más cada semana para enfocarme en lo que realmente importa."</p>
+                <p class="testimonial-author">- Carla, Mentora de Liderazgo Femenino</p>
             </div>
         </div>
     </section>
 
+    <!-- Agenda -->
     <section id="agenda">
         <div class="container">
             <h2>Habla Con Nosotras Sin Compromiso</h2>
             <p style="text-align: center; max-width: 700px; margin: 0 auto 30px;">En 30 minutos gratuitos, descubrirás:</p>
             
-            <ul style="max-width: 600px; margin: 0 auto 40px;">
-                <li style="margin-bottom: 15px;">✅ En qué etapa está tu comunicación (ALMA, VOCALIA, SOMA o MAGNA)</li>
-                <li style="margin-bottom: 15px;">✅ Cómo la IA puede ahorrarte horas de trabajo</li>
-                <li style="margin-bottom: 15px;">✅ Un plan personalizado para tu marca</li>
+            <ul style="max-width: 600px; margin: 0 auto 40px; list-style: none;">
+                <li style="margin-bottom: 15px; padding-left: 30px; position: relative;">
+                    <span style="position: absolute; left: 0; color: var(--primary); font-weight: bold;">✓</span>
+                    En qué etapa está tu comunicación (ALMA, VOCALIA, SOMA o MAGNA)
+                </li>
+                <li style="margin-bottom: 15px; padding-left: 30px; position: relative;">
+                    <span style="position: absolute; left: 0; color: var(--primary); font-weight: bold;">✓</span>
+                    Cómo la IA puede ahorrarte horas de trabajo
+                </li>
+                <li style="margin-bottom: 15px; padding-left: 30px; position: relative;">
+                    <span style="position: absolute; left: 0; color: var(--primary); font-weight: bold;">✓</span>
+                    Un plan personalizado para tu marca
+                </li>
             </ul>
             
-            <!-- Espacio para widget Calendly -->
-            <div style="background: #f5f5f5; height: 400px; display: flex; align-items: center; justify-content: center; border-radius: 10px; margin-bottom: 20px;">
+            <div class="calendar-placeholder">
                 <p>Aquí iría el widget de Calendly para agendar</p>
             </div>
             
@@ -257,46 +590,50 @@
         </div>
     </section>
 
-    <footer style="background: var(--dark); color: white; padding: 50px 0;">
-        <div class="container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px;">
-            <div>
-                <!-- Logo en footer -->
-                <h3 style="color: white; margin-bottom: 20px;">H² Studio</h3>
-                <p>Tu comunicación evoluciona.<br>Tu esencia permanece.</p>
-            </div>
-            
-            <div>
-                <h4 style="color: white; margin-bottom: 15px;">Servicios</h4>
-                <ul style="list-style: none; padding: 0;">
-                    <li style="margin-bottom: 10px;"><a href="#" style="color: white; text-decoration: none;">Impulso Estratégico</a></li>
-                    <li style="margin-bottom: 10px;"><a href="#" style="color: white; text-decoration: none;">Automatización Consciente</a></li>
-                    <li style="margin-bottom: 10px;"><a href="#" style="color: white; text-decoration: none;">Mentorías 1:1</a></li>
-                </ul>
-            </div>
-            
-            <div>
-                <h4 style="color: white; margin-bottom: 15px;">Contacto</h4>
-                <p style="margin-bottom: 10px;">hola@h2studio.com</p>
-                <p>WhatsApp: +XX XXX XXX XXX</p>
-            </div>
-            
-            <div>
-                <h4 style="color: white; margin-bottom: 15px;">Síguenos</h4>
-                <div style="display: flex; gap: 15px;">
-                    <a href="#" style="color: white; font-size: 1.5rem;">Instagram</a>
-                    <a href="#" style="color: white; font-size: 1.5rem;">LinkedIn</a>
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-logo">H²<span>Studio</span></div>
+                    <p>Tu comunicación evoluciona.<br>Tu esencia permanece.</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Servicios</h4>
+                    <ul>
+                        <li><a href="#servicios">Impulso Estratégico</a></li>
+                        <li><a href="#servicios">Automatización Consciente</a></li>
+                        <li><a href="#servicios">Mentorías 1:1</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Contacto</h4>
+                    <ul>
+                        <li>hola@h2studio.io</li>
+                        <li>WhatsApp: +XX XXX XXX XXX</li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Síguenos</h4>
+                    <div class="social-links">
+                        <a href="#">Instagram</a>
+                        <a href="#">LinkedIn</a>
+                    </div>
                 </div>
             </div>
-        </div>
-        
-        <div class="container" style="margin-top: 50px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; text-align: center;">
-            <p style="font-size: 0.8rem;">© 2024 H² Studio. Todos los derechos reservados. | <a href="#" style="color: white;">Política de Privacidad</a></p>
+            
+            <div class="copyright">
+                © 2024 H² Studio. Todos los derechos reservados. | <a href="#" style="color: #aaa;">Política de Privacidad</a>
+            </div>
         </div>
     </footer>
 
-    <!-- Sidebar para recursos gratuitos -->
-    <aside id="sidebar" style="position: fixed; right: -300px; top: 0; width: 300px; height: 100%; background: white; box-shadow: -5px 0 15px rgba(0,0,0,0.1); transition: right 0.3s ease; z-index: 1000; padding: 20px; overflow-y: auto;">
-        <button id="close-sidebar" style="position: absolute; top: 10px; right: 10px; background: none; border: none; font-size: 1.5rem;">×</button>
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar">
+        <button class="close-sidebar" id="close-sidebar">×</button>
         
         <h3 style="color: var(--primary); margin-bottom: 20px;">📥 Recursos Gratuitos</h3>
         
@@ -312,26 +649,39 @@
                     <option>Terapeuta</option>
                     <option>Psicóloga</option>
                 </select>
-                <button type="submit" style="background: var(--primary); color: white; border: none; padding: 10px; border-radius: 5px; cursor: pointer;">Descargar Ahora →</button>
+                <button type="submit" class="cta-button" style="width: 100%;">Descargar Ahora →</button>
             </form>
         </div>
         
         <div>
             <h4 style="font-size: 1.1rem; margin-bottom: 10px;">✉️ Plantilla de Ejemplo</h4>
             <p style="margin-bottom: 15px;"><strong>"Email Automático que Suena 100% a Ti"</strong></p>
-            <a href="#" style="display: inline-block; padding: 8px 15px; background: var(--light); color: var(--dark); border-radius: 5px; text-decoration: none;">Ver Preview →</a>
+            <a href="#" class="secondary-button" style="display: inline-block; width: 100%; text-align: center;">Ver Preview →</a>
         </div>
-    </aside>
+    </div>
+
+    <!-- Floating CTA -->
+    <a href="#agenda" class="cta-button" style="position: fixed; bottom: 20px; right: 20px; z-index: 999; padding: 15px 25px; box-shadow: 0 4px 20px rgba(157, 122, 217, 0.5);">
+        ¿Necesitas ayuda? 💬
+    </a>
 
     <script>
-        // Script para mostrar/ocultar sidebar
+        // Sidebar functionality
         document.addEventListener('DOMContentLoaded', function() {
             setTimeout(function() {
-                document.getElementById('sidebar').style.right = '0';
-            }, 10000); // Mostrar después de 10 segundos
+                document.getElementById('sidebar').classList.add('active');
+            }, 10000);
             
             document.getElementById('close-sidebar').addEventListener('click', function() {
-                document.getElementById('sidebar').style.right = '-300px';
+                document.getElementById('sidebar').classList.remove('active');
+            });
+            
+            // Close sidebar when clicking outside
+            document.addEventListener('click', function(event) {
+                const sidebar = document.getElementById('sidebar');
+                if (!sidebar.contains(event.target) {
+                    sidebar.classList.remove('active');
+                }
             });
         });
     </script>
